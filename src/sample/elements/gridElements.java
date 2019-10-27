@@ -11,8 +11,8 @@ public interface gridElements {
     Label labelDesireCurreny = new Label("Desire currency:");
     Label labelCalculate = new Label("0.00");
     Label labelSave = new Label("saved!");
-    Label labelCurrencyLoaded = new Label("loaded!");
-    Label labelDesireCurrencyLoaded = new Label("loaded!");
+    Label labelCurrencyValue = new Label("value");
+    Label labelDesireCurrencyValue = new Label("value");
     Label temp = new Label("");
     Label result = new Label("Result:");
     Button buttonOpenFile = new Button("Select file");

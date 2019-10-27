@@ -1,12 +1,14 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.*;
+import javafx.event.Event;
+import javafx.stage.*;
 import javafx.stage.Window;
-import javafx.stage.WindowEvent;
 import sample.elements.*;
 import com.sun.xml.internal.ws.commons.xmlutil.Converter;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -17,15 +19,15 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import org.omg.CORBA.Any;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.EventListener;
 import java.util.LinkedList;
@@ -91,6 +93,7 @@ public class Main extends Application implements gridElements {
             System.out.println(tempCurrencies.get(i));
         }
         choiceBox_Currency.setValue(choiceBox_Currency.getItems().get(0));
+        labelCurrencyValue.setText(values.get(choiceBox_Currency.getSelectionModel().getSelectedIndex()));
         choiceBox_desiredCurreny.setValue(choiceBox_Currency.getItems().get(1));
     }
 
@@ -180,15 +183,13 @@ public class Main extends Application implements gridElements {
         layout.setVgap(15);
         layout.setHgap(15);
         labelSave.setVisible(false);
-        labelCurrencyLoaded.setVisible(false);
-        labelDesireCurrencyLoaded.setVisible(false);
 
         choiceBox_Currency.getItems().add("Select file first");
         choiceBox_Currency.setValue(choiceBox_Currency.getItems().get(0));
-        choiceBox_desiredCurreny.getItems().add("Selct file first");
+        choiceBox_desiredCurreny.getItems().add("Select file first");
         choiceBox_desiredCurreny.setValue(choiceBox_desiredCurreny.getItems().get(0));
         layout.getChildren().addAll(labelPath, labelCurrency, labelDesireCurreny, temp, result, buttonOpenFile, choiceBox_Currency, choiceBox_desiredCurreny,
-                buttonCalculate, labelCalculate, buttonEditFile, labelCurrencyLoaded, labelDesireCurrencyLoaded, buttonSaveFile, labelSave);
+                buttonCalculate, labelCalculate, buttonEditFile, labelCurrencyValue, labelDesireCurrencyValue, buttonSaveFile, labelSave);
 
         buttonOpenFile.setOnAction(
             new EventHandler<ActionEvent>() {
@@ -202,19 +203,22 @@ public class Main extends Application implements gridElements {
                 }
             }
         );
-
-        buttonEditFile.setOnAction((final ActionEvent e) -> {
-            if (file != null) {
-                try {
-                    desktop.open(file);
-                    runScanner(file);
-                } catch (IOException ex) {
-                    System.out.println(ex.getMessage());
+        buttonEditFile.setOnAction(
+            new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    if (file != null) {
+                        try {
+                            editFile(file);
+                        } catch (Exception ex) {
+                            System.out.println(ex.getMessage());
+                        } finally {
+                            runScanner(file);
+                        }
+                    }
                 }
             }
-        });
-
-
+        );
         buttonSaveFile.setOnAction(
             new EventHandler<ActionEvent>() {
                 @Override
@@ -223,19 +227,55 @@ public class Main extends Application implements gridElements {
                 }
             }
         );
-    }
+        buttonCalculate.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        if (choiceBox_Currency.getItems().get(0) != "Select file first" && choiceBox_desiredCurreny.getItems().get(0) != "Select file first") {
+                            double result = 0;
+                            String currencyChoiceBox = choiceBox_Currency.getItems().get(choiceBox_Currency.getSelectionModel().getSelectedIndex());
+                            String desireCurrencyChoiceBox = choiceBox_desiredCurreny.getItems().get(choiceBox_desiredCurreny.getSelectionModel().getSelectedIndex());
+                            String currencyChoiceBoxValue = values.get(choiceBox_Currency.getSelectionModel().getSelectedIndex());
+                            String desireCurrencyChoiceBoxValue = values.get(choiceBox_desiredCurreny.getSelectionModel().getSelectedIndex());
+                            System.out.println(currencyChoiceBox + " = " + currencyChoiceBoxValue);
+                            System.out.println(desireCurrencyChoiceBox + " = " + desireCurrencyChoiceBoxValue);
+//                          result = Double.valueOf(currencyChoiceBoxValue)/Double.valueOf(desireCurrencyChoiceBoxValue);
+//                            DecimalFormat formatter = new DecimalFormat()
+                            labelCalculate.setText(String.valueOf(result));
+                        }
+                    }
+                }
+        );
 
-    private void editFile(File file) {
-        EventQueue.invokeLater(() -> {
-            try {
-                desktop.open(file);
-                EventQueue.invokeLater(() -> {
-                    runScanner(file);
-                });
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage());
+        choiceBox_Currency.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (choiceBox_Currency.getItems().size() > 0) {
+                    labelCurrencyValue.setText(values.get(choiceBox_Currency.getSelectionModel().getSelectedIndex()));
+                }
             }
         });
+
+        choiceBox_desiredCurreny.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (choiceBox_desiredCurreny.getItems().size() > 0) {
+                    labelDesireCurrencyValue.setText(values.get(choiceBox_desiredCurreny.getSelectionModel().getSelectedIndex()));
+                }
+            }
+        });
+    }
+
+    public void editFile(File file) throws Exception {
+        if (Desktop.isDesktopSupported()) {
+            new Thread(() -> {
+                try {
+                    Desktop.getDesktop().open(file);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }).start();
+        }
     }
 }
 
