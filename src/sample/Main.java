@@ -4,6 +4,8 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.*;
 import javafx.event.Event;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.stage.*;
 import javafx.stage.Window;
 import sample.elements.*;
@@ -21,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import org.omg.CORBA.Any;
 
+import javax.swing.text.html.StyleSheet;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowListener;
@@ -28,10 +31,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
-import java.util.Date;
-import java.util.EventListener;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main extends Application implements gridElements {
     ChoiceBox<String> choiceBox_Currency = new ChoiceBox<>();
@@ -47,6 +47,8 @@ public class Main extends Application implements gridElements {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         initialize(primaryStage);
         setGridConstraints();
+        setUserAgentStylesheet(STYLESHEET_MODENA);
+        labelCurrencyValue.setBackground(Back);
     }
 
     public static void main(String[] args) {
@@ -184,9 +186,9 @@ public class Main extends Application implements gridElements {
         layout.setHgap(15);
         labelSave.setVisible(false);
 
-        choiceBox_Currency.getItems().add("Select file first");
+        choiceBox_Currency.getItems().add("Choose file first");
         choiceBox_Currency.setValue(choiceBox_Currency.getItems().get(0));
-        choiceBox_desiredCurreny.getItems().add("Select file first");
+        choiceBox_desiredCurreny.getItems().add("Choose file first");
         choiceBox_desiredCurreny.setValue(choiceBox_desiredCurreny.getItems().get(0));
         layout.getChildren().addAll(labelPath, labelCurrency, labelDesireCurreny, temp, result, buttonOpenFile, choiceBox_Currency, choiceBox_desiredCurreny,
                 buttonCalculate, labelCalculate, buttonEditFile, labelCurrencyValue, labelDesireCurrencyValue, buttonSaveFile, labelSave);
@@ -232,16 +234,10 @@ public class Main extends Application implements gridElements {
                     @Override
                     public void handle(ActionEvent event) {
                         if (choiceBox_Currency.getItems().get(0) != "Select file first" && choiceBox_desiredCurreny.getItems().get(0) != "Select file first") {
-                            double result = 0;
-                            String currencyChoiceBox = choiceBox_Currency.getItems().get(choiceBox_Currency.getSelectionModel().getSelectedIndex());
-                            String desireCurrencyChoiceBox = choiceBox_desiredCurreny.getItems().get(choiceBox_desiredCurreny.getSelectionModel().getSelectedIndex());
-                            String currencyChoiceBoxValue = values.get(choiceBox_Currency.getSelectionModel().getSelectedIndex());
-                            String desireCurrencyChoiceBoxValue = values.get(choiceBox_desiredCurreny.getSelectionModel().getSelectedIndex());
-                            System.out.println(currencyChoiceBox + " = " + currencyChoiceBoxValue);
-                            System.out.println(desireCurrencyChoiceBox + " = " + desireCurrencyChoiceBoxValue);
-//                          result = Double.valueOf(currencyChoiceBoxValue)/Double.valueOf(desireCurrencyChoiceBoxValue);
-//                            DecimalFormat formatter = new DecimalFormat()
-                            labelCalculate.setText(String.valueOf(result));
+                           labelCalculate.setText(String.valueOf(calculate(
+                                   String.valueOf(values.get(choiceBox_Currency.getSelectionModel().getSelectedIndex())),
+                                   String.valueOf(values.get(choiceBox_desiredCurreny.getSelectionModel().getSelectedIndex()))))
+                           );
                         }
                     }
                 }
@@ -256,14 +252,14 @@ public class Main extends Application implements gridElements {
             }
         });
 
-        choiceBox_desiredCurreny.valueProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (choiceBox_desiredCurreny.getItems().size() > 0) {
-                    labelDesireCurrencyValue.setText(values.get(choiceBox_desiredCurreny.getSelectionModel().getSelectedIndex()));
-                }
-            }
-        });
+//        choiceBox_desiredCurreny.valueProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+//                if (choiceBox_desiredCurreny.getItems().size() > 0) {
+//                    labelDesireCurrencyValue.setText(values.get(choiceBox_desiredCurreny.getSelectionModel().getSelectedIndex()));
+//                }
+//            }
+//        });
     }
 
     public void editFile(File file) throws Exception {
@@ -277,6 +273,29 @@ public class Main extends Application implements gridElements {
             }).start();
         }
     }
+
+    public String calculate(String oldChoiceBoxValue, String oldDesireChoiceBoxValue) {
+        double newChoiceBoxValue = removeDecimalSigns(oldChoiceBoxValue);
+        double newDesireChoiceBoxValue = removeDecimalSigns(oldDesireChoiceBoxValue);
+
+        double result = newChoiceBoxValue/newDesireChoiceBoxValue;
+
+        return String.valueOf(result);
+    }
+
+    public double removeDecimalSigns(String value) {
+        String parts = "";
+        System.out.println("Printing " + value);
+        for (int i = 0; i < value.length(); i++) {
+            if (value.charAt(i) != '.' && value.charAt(i) != ',') {
+                parts += value.charAt(i);
+            }
+        }
+        System.out.println(parts);
+        double newValue = Double.valueOf(parts);
+        return newValue;
+    }
+
 }
 
 
