@@ -23,7 +23,7 @@ public interface gridElements {
     Label labelQuantity = new Label("Quantity");
     Label labelDesireCurrencyValue = new Label("");
     Label temp = new Label("");
-    Label result = new Label("Result:");
+    Label result = new Label("You get:");
     Button buttonOpenFile = new Button("Choose file");
     Button buttonSaveFile = new Button("Save to file");
     Button buttonEditFile = new Button("Edit file");

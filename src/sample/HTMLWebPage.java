@@ -21,6 +21,9 @@ public class HTMLWebPage {
     private void init() {
         try {
             this.document = Jsoup.connect(webPage_url).get();
+            currenciesName.add("Polski złoty");
+            currenciesSymbol.add("PLN");
+            currenciesValue.add("1");
             for (Element row : document.select("div.rt-tbody div.rt-tr-group")) { // Table named rt-tbody iKAsXu in the website
                 if (row.select("div.rt-td:nth-of-type(1)").text().equals("")) {
                     continue;

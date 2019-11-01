@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Main extends Application implements gridElements {
@@ -58,6 +59,7 @@ public class Main extends Application implements gridElements {
         comboBox_desiredCurreny.setMaxSize(150,50);
         comboBox_Currency.setMaxSize(150,50);
         buttonOpenFile.setMaxSize(150, 50);
+        buttonCalculate.setMaxSize(150, 50);
         comboBox_desiredCurreny.setValue(comboBox_desiredCurreny.getItems().get(0));
         labelDesireCurrencyValue.setText(webPage.getCurrenciesValues().get(comboBox_desiredCurreny.getSelectionModel().getSelectedIndex())  + " zł");
 
@@ -77,13 +79,11 @@ public class Main extends Application implements gridElements {
         buttonEditFile.setOnAction( new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    if (file != null) {
+                    if (file != null && Desktop.isDesktopSupported()) {
                         try {
-                            editFile(file);
-                        } catch (Exception ex) {
-                            System.out.println(ex.getMessage());
-                        } finally {
-                            runScanner(file);
+                            Desktop.getDesktop().open(file);
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
@@ -97,11 +97,25 @@ public class Main extends Application implements gridElements {
         buttonCalculate.setOnAction( new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (comboBox_Currency.getItems().get(0) != "Select file first") {
-                   labelCalculate.setText(String.valueOf(calculate(
-                           String.valueOf(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex())),
-                           String.valueOf(webPage.getCurrenciesValues().get(comboBox_desiredCurreny.getSelectionModel().getSelectedIndex()))))
-                   );
+                DecimalFormat decimalFormat = new DecimalFormat("##,###,###.##");
+                if (labelPath.getText() != "'path:'") {
+                    int selectedCurrency_index = 0;
+                    for (String tempCurrency: webPage.getCurrenciesSymbols()) {
+                        if (tempCurrency.equals(comboBox_Currency.getSelectionModel().getSelectedItem())) {
+                            break;
+                        } else {
+                            selectedCurrency_index++;
+                        }
+                    }
+                    String value = String.valueOf(calculate(
+                            String.valueOf(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex())),
+                            String.valueOf(webPage.getCurrenciesValues().get(comboBox_desiredCurreny.getSelectionModel().getSelectedIndex())),
+                            String.valueOf(webPage.getCurrenciesValues().get(selectedCurrency_index))));
+                    if (comboBox_Currency.getItems().get(0) != "Select file first") {
+                        labelCalculate.setText(decimalFormat.format(Double.valueOf(value)) + " " + webPage.getCurrenciesSymbols().get(comboBox_desiredCurreny                                            .getSelectionModel().getSelectedIndex()));
+                    }
+                } else {
+                    labelCalculate.setText("You need to choose file first!");
                 }
             }
         });
@@ -110,7 +124,8 @@ public class Main extends Application implements gridElements {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (comboBox_Currency.getItems().size() > 0) {
-                    labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
+                    labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()) + " " +
+                            currencies.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
                 }
             }
         });
@@ -136,10 +151,10 @@ public class Main extends Application implements gridElements {
     }
 
     private void runScanner(File file) {
-        comboBox_Currency.getItems().clear();
         this.dates = new LinkedList<>();
         this.quantity = new LinkedList<>();
         this.currencies = new LinkedList<>();
+        comboBox_Currency.getItems().clear();
         try {
             Scanner scanner = new Scanner(new File(file.getPath()));
             while (scanner.hasNextLine()) {
@@ -148,53 +163,48 @@ public class Main extends Application implements gridElements {
                 lineScanner.useDelimiter(";");
                 while (lineScanner.hasNext()) {
                     String temp = lineScanner.next();
-                    if(checkIfItsDate(temp))
+                    if(checkIfItsDate(temp)) {
                         dates.add(temp);
-                    else if(checkIfItsValues(temp))
+                    } else if (checkIfItsValue(temp)) {
                         quantity.add(temp);
-                    else if (checkIfItsShortcuts(temp))
+                    } else if (checkIfItsShortcut(temp)) {
                         currencies.add(temp);
+                        comboBox_Currency.getItems().add(temp);
+                    }
                 }
             }
         } catch (IOException | NumberFormatException ex) {
             ex.printStackTrace();
-        }
-        for (int i = 0; i < currencies.size(); i++) {
-            comboBox_Currency.getItems().add(currencies.get(i));
-        }
-        comboBox_Currency.setValue(comboBox_Currency.getItems().get(0));
-        labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
-    }
-
-    private void editFile(File file) throws Exception {
-        if (Desktop.isDesktopSupported()) {
-            try {
-                Desktop.getDesktop().open(file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } finally {
+            comboBox_Currency.setValue(comboBox_Currency.getItems().get(0));
+            labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
+            labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()) + " " +
+                    currencies.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
         }
     }
 
-    private String calculate(String oldQuantity, String oldDesireChoiceBoxValue) {
-        double newQuantity = removeDecimalSigns(oldQuantity);
-        double newDesireChoiceBoxValue = removeDecimalSigns(oldDesireChoiceBoxValue);
-        System.out.println(newQuantity);
-        System.out.println(newDesireChoiceBoxValue);
-        double result = newQuantity/newDesireChoiceBoxValue;
-
+    private String calculate(String oldQuantity, String oldDesireCurrencyValue, String oldCurrencyValue) {
+        double newQuantity = removeCommaSigns(oldQuantity);
+        double newDesireCurrencyValue = removeCommaSigns(oldDesireCurrencyValue);
+        double newCurrencyValue = removeCommaSigns(oldCurrencyValue);
+        System.out.println("New quantity: " + newQuantity);
+        System.out.println("New desireChoiceBoxValue: " + newDesireCurrencyValue);
+        System.out.println("New currencyValue: " + newCurrencyValue);
+        double result = (newCurrencyValue/newDesireCurrencyValue)*newQuantity;
         return String.valueOf(result);
     }
 
-    private double removeDecimalSigns(String value) {
+    private double removeCommaSigns(String value) {
         String parts = "";
-        System.out.println("Printing " + value);
         for (int i = 0; i < value.length(); i++) {
-            if (value.charAt(i) != '.' && value.charAt(i) != ',') {
-                parts += value.charAt(i);
+            if (value.charAt(i) != '.') {
+                if (value.charAt(i) == ',') {
+                    parts += '.';
+                } else {
+                    parts += value.charAt(i);
+                }
             }
         }
-        System.out.println(parts);
         double newValue = Double.valueOf(parts);
         return newValue;
     }
@@ -222,17 +232,21 @@ public class Main extends Application implements gridElements {
 
     }
 
-    private boolean checkIfItsValues(String currency) {
+    private boolean checkIfItsValue(String currency) {
         String acceptable = "0123456789.,";
         Boolean isAcceptable = true;
+        int commaCounter = 0;
         for (int i = 0; i < currency.length(); i++) {
             isAcceptable = false;
             for (int j = 0; j < acceptable.length(); j++) {
                 if (currency.charAt(i) == acceptable.charAt(j)) {
                     isAcceptable = true;
+                    if (currency.charAt(i) == ',') {
+                        commaCounter++;
+                    }
                 }
             }
-            if (!isAcceptable) {
+            if (!isAcceptable || commaCounter > 1) {
                 return false;
             }
         }
@@ -240,25 +254,13 @@ public class Main extends Application implements gridElements {
 
     }
 
-    private boolean checkIfItsShortcuts(String shortcut) {
-        String acceptable = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        Boolean isAcceptable = true;
-        if (shortcut.length() > 4) {
-            isAcceptable = false;
-        } else {
-            for (int i = 0; i < shortcut.length(); i++) {
-                isAcceptable = false;
-                for (int j = 0; j < acceptable.length(); j++) {
-                    if (shortcut.charAt(i) == acceptable.charAt(j)) {
-                        isAcceptable = true;
-                    }
-                }
-                if (!isAcceptable) {
-                    return false;
-                }
+    private boolean checkIfItsShortcut(String shortcut) {
+        for (String temp: webPage.getCurrenciesSymbols()) {
+            if (temp.equals(shortcut)) {
+                return true;
             }
         }
-        return isAcceptable;
+        return false;
     }
 }
 

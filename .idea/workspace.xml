@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sample/HTMLWebPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Currency Calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Currency Calculator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/example_file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/example_file2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/HTMLWebPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/HTMLWebPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/elements/gridElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/elements/gridElements.java" afterDir="false" />
     </list>
@@ -69,20 +76,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
+            <state relative-caret-position="174">
+              <caret line="89" column="16" lean-forward="true" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#7220:7595" />
-                <element signature="class#7659:8160" />
-                <element signature="class#8224:8415" />
-                <element signature="e#3920#3921#0" expanded="true" />
-                <element signature="e#3986#3987#0" expanded="true" />
-                <element signature="class#5057:5260" />
+                <element signature="class#2741:3116" />
+                <element signature="class#3705:3896" />
+                <element signature="e#3819#3820#0" expanded="true" />
+                <element signature="e#3885#3886#0" expanded="true" />
+                <element signature="class#4579:4961" />
+                <element signature="class#5028:5371" />
                 <element signature="method#setGridConstraints#0;class#Main#0" />
-                <element signature="method#runScanner#0;class#Main#0" />
-                <element signature="method#editFile#0;class#Main#0" />
-                <element signature="method#removeDecimalSigns#0;class#Main#0" />
+                <element signature="method#calculate#0;class#Main#0" />
+                <element signature="method#removeCommaSigns#0;class#Main#0" />
                 <element signature="method#checkIfItsDate#0;class#Main#0" />
                 <element signature="method#checkIfItsValues#0;class#Main#0" />
                 <element signature="method#checkIfItsShortcuts#0;class#Main#0" />
@@ -94,11 +100,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/elements/gridElements.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="23" />
+            <state relative-caret-position="279">
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1289#1297#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/HTMLWebPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="893">
-              <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+            <state relative-caret-position="399">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="44" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,6 +215,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -340,7 +345,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23031914" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2324468" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -349,7 +354,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32870865" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20811099" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39957264" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -465,13 +470,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/simpleFileChooser.java" />
-    <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/tk/quantum/GlassViewEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="294" selection-start-line="294" selection-end-line="294" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/collections/ListListenerHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6670">
@@ -515,24 +513,19 @@
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/HTMLData.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/HTMLData.java" />
+    <entry file="file://$PROJECT_DIR$/src/sample/elements/SortedComboBoxModel.java" />
+    <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/tk/quantum/GlassViewEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/elements/SortedComboBoxModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="4">
+          <caret line="430" selection-start-line="430" selection-end-line="430" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/HTMLWebPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+        <state relative-caret-position="399">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="44" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -541,31 +534,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/elements/gridElements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="279">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1289#1297#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="183" column="35" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="35" />
+        <state relative-caret-position="174">
+          <caret line="89" column="16" lean-forward="true" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#7220:7595" />
-            <element signature="class#7659:8160" />
-            <element signature="class#8224:8415" />
-            <element signature="e#3920#3921#0" expanded="true" />
-            <element signature="e#3986#3987#0" expanded="true" />
-            <element signature="class#5057:5260" />
+            <element signature="class#2741:3116" />
+            <element signature="class#3705:3896" />
+            <element signature="e#3819#3820#0" expanded="true" />
+            <element signature="e#3885#3886#0" expanded="true" />
+            <element signature="class#4579:4961" />
+            <element signature="class#5028:5371" />
             <element signature="method#setGridConstraints#0;class#Main#0" />
-            <element signature="method#runScanner#0;class#Main#0" />
-            <element signature="method#editFile#0;class#Main#0" />
-            <element signature="method#removeDecimalSigns#0;class#Main#0" />
+            <element signature="method#calculate#0;class#Main#0" />
+            <element signature="method#removeCommaSigns#0;class#Main#0" />
             <element signature="method#checkIfItsDate#0;class#Main#0" />
             <element signature="method#checkIfItsValues#0;class#Main#0" />
             <element signature="method#checkIfItsShortcuts#0;class#Main#0" />
