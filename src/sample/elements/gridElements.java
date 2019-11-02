@@ -19,7 +19,7 @@ public interface gridElements {
     Label labelPath = new Label("'path:'");
     Label labelDesireCurreny = new Label("Desire currency:");
     Label labelCalculate = new Label("0.00");
-    Label labelSave = new Label("saved!");
+    Label labelSave = new Label("Saved!");
     Label labelQuantity = new Label("Quantity");
     Label labelDesireCurrencyValue = new Label("");
     Label temp = new Label("");

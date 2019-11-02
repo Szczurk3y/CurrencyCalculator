@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/example_file2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/example_file2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/HTMLWebPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/HTMLWebPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/example_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/example_file2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/elements/gridElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/elements/gridElements.java" afterDir="false" />
     </list>
@@ -76,22 +70,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="89" column="16" lean-forward="true" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+            <state relative-caret-position="94">
+              <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#2741:3116" />
-                <element signature="class#3705:3896" />
-                <element signature="e#3819#3820#0" expanded="true" />
-                <element signature="e#3885#3886#0" expanded="true" />
-                <element signature="class#4579:4961" />
-                <element signature="class#5028:5371" />
+                <element signature="class#2818:3193" />
+                <element signature="class#3237:3690" />
+                <element signature="e#4707#5293#0" expanded="true" />
+                <element signature="e#5292#5293#0" expanded="true" />
+                <element signature="class#3970:5543" />
                 <element signature="method#setGridConstraints#0;class#Main#0" />
+                <element signature="method#runScanner#0;class#Main#0" />
                 <element signature="method#calculate#0;class#Main#0" />
                 <element signature="method#removeCommaSigns#0;class#Main#0" />
                 <element signature="method#checkIfItsDate#0;class#Main#0" />
-                <element signature="method#checkIfItsValues#0;class#Main#0" />
-                <element signature="method#checkIfItsShortcuts#0;class#Main#0" />
               </folding>
             </state>
           </provider>
@@ -100,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/elements/gridElements.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="18" column="40" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="40" />
+            <state relative-caret-position="336">
+              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/HTMLWebPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="44" selection-end-column="5" />
+            <state relative-caret-position="361">
+              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -215,8 +207,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,12 +222,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572537881312" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JARs/jsoup-1.12.1.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Game_Menu" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -274,9 +266,10 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../jdk1.8.0_181/jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Currency Calculator" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -344,8 +337,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.2324468" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23457447" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -355,7 +349,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.20811099" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39957264" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.18356457" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -365,7 +359,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32905984" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32870865" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -455,13 +449,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/glass/ui/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="945" column="16" lean-forward="true" selection-start-line="945" selection-start-column="16" selection-end-line="945" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/glass/ui/View.java" />
     <entry file="file://$PROJECT_DIR$/../Game_Menu/src/GameMenu/MenuHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4655">
@@ -470,13 +458,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/simpleFileChooser.java" />
-    <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/collections/ListListenerHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6670">
-          <caret line="328" selection-start-line="328" selection-end-line="328" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/collections/ListListenerHelper.java" />
     <entry file="file://$PROJECT_DIR$/../Game_Menu/src/GameMenu/MenuStages/StageTwo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -515,17 +497,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/HTMLData.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/elements/SortedComboBoxModel.java" />
-    <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/tk/quantum/GlassViewEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="430" selection-start-line="430" selection-end-line="430" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/tk/quantum/GlassViewEventHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/HTMLWebPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="44" selection-end-column="5" />
+        <state relative-caret-position="361">
+          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -534,8 +510,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/elements/gridElements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="40" />
+        <state relative-caret-position="336">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -544,22 +520,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="89" column="16" lean-forward="true" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+        <state relative-caret-position="94">
+          <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#2741:3116" />
-            <element signature="class#3705:3896" />
-            <element signature="e#3819#3820#0" expanded="true" />
-            <element signature="e#3885#3886#0" expanded="true" />
-            <element signature="class#4579:4961" />
-            <element signature="class#5028:5371" />
+            <element signature="class#2818:3193" />
+            <element signature="class#3237:3690" />
+            <element signature="e#4707#5293#0" expanded="true" />
+            <element signature="e#5292#5293#0" expanded="true" />
+            <element signature="class#3970:5543" />
             <element signature="method#setGridConstraints#0;class#Main#0" />
+            <element signature="method#runScanner#0;class#Main#0" />
             <element signature="method#calculate#0;class#Main#0" />
             <element signature="method#removeCommaSigns#0;class#Main#0" />
             <element signature="method#checkIfItsDate#0;class#Main#0" />
-            <element signature="method#checkIfItsValues#0;class#Main#0" />
-            <element signature="method#checkIfItsShortcuts#0;class#Main#0" />
           </folding>
         </state>
       </provider>
@@ -605,7 +579,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8 (2)</last-edited>
+          <last-edited>Android API 28 Platform</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -618,6 +592,18 @@
       <state key="ModuleStructureConfigurable.UI">
         <settings>
           <last-edited>Currency Calculator</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

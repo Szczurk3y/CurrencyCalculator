@@ -3,6 +3,7 @@ package sample;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.*;
+import javafx.scene.input.DataFormat;
 import javafx.scene.input.InputMethodEvent;
 import javafx.stage.*;
 import sample.elements.*;
@@ -15,16 +16,18 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import java.awt.*;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Main extends Application implements gridElements {
     public File file;
     private LinkedList<String> dates = new LinkedList<>();
     private LinkedList<String> quantity = new LinkedList<>();
     private LinkedList<String> currencies = new LinkedList<>();
-
     private Desktop desktop = Desktop.getDesktop();
     private FileChooser fileChooser = new FileChooser();
     private HTMLWebPage webPage = new HTMLWebPage("https://www.money.pl/pieniadze/nbp/srednie/");
@@ -60,6 +63,8 @@ public class Main extends Application implements gridElements {
         comboBox_Currency.setMaxSize(150,50);
         buttonOpenFile.setMaxSize(150, 50);
         buttonCalculate.setMaxSize(150, 50);
+        labelPath.setMaxSize(100,50);
+
         comboBox_desiredCurreny.setValue(comboBox_desiredCurreny.getItems().get(0));
         labelDesireCurrencyValue.setText(webPage.getCurrenciesValues().get(comboBox_desiredCurreny.getSelectionModel().getSelectedIndex())  + " zł");
 
@@ -91,7 +96,31 @@ public class Main extends Application implements gridElements {
         buttonSaveFile.setOnAction( new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    labelSave.setVisible(true);
+                    if (file != null) {
+                        try {
+                            SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+                            Date date = new Date(System.currentTimeMillis());
+                            FileWriter fileWriter = new FileWriter(file.getPath(), true);
+                            fileWriter.write("\n// Result from: " + dateFormatter.format(date) + " --> " + labelCalculate.getText());
+                            fileWriter.close();
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
+                        Thread thread = new Thread() {
+                            @Override
+                            public void run() {
+                                labelSave.setVisible(true);
+                                try {
+                                    TimeUnit.SECONDS.sleep(1);
+                                } catch (InterruptedException ex) {
+                                    ex.printStackTrace();
+                                } finally {
+                                    labelSave.setVisible(false);
+                                }
+                            }
+                        };
+                        thread.start();
+                    }
                 }
             } );
         buttonCalculate.setOnAction( new EventHandler<ActionEvent>() {
