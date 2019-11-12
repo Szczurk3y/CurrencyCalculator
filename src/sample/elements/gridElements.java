@@ -24,7 +24,7 @@ public interface gridElements {
     Label labelDesireCurrencyValue = new Label("");
     Label temp = new Label("");
     Label result = new Label("You get:");
-    Button buttonOpenFile = new Button("Choose file");
+    Button buttonOpenFile = new Button("Choose a file");
     Button buttonSaveFile = new Button("Save to file");
     Button buttonEditFile = new Button("Edit file");
     Button buttonCalculate = new Button("Calculate!");

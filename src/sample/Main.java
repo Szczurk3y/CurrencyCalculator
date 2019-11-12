@@ -1,8 +1,10 @@
 package sample;
 
+import com.sun.xml.internal.ws.util.ASCIIUtility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.*;
+import javafx.scene.control.Alert;
 import javafx.scene.input.DataFormat;
 import javafx.scene.input.InputMethodEvent;
 import javafx.stage.*;
@@ -14,6 +16,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
+
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
@@ -37,7 +41,6 @@ public class Main extends Application implements gridElements {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         init(primaryStage);
         setGridConstraints();
-        this.webPage.printWeb();
     }
 
     public static void main(String[] args) {
@@ -54,7 +57,7 @@ public class Main extends Application implements gridElements {
         layout.setHgap(15);
         labelSave.setVisible(false);
 
-        comboBox_Currency.getItems().add("Choose file first");
+        comboBox_Currency.getItems().add("Choose a file first");
         comboBox_Currency.setValue(comboBox_Currency.getItems().get(0));
         for (int i = 0; i < webPage.getCurrenciesSymbols().size(); i++) {
             comboBox_desiredCurreny.getItems().add(webPage.getCurrenciesSymbols().get(i) + " - " + webPage.getCurrenciesNames().get(i));
@@ -140,11 +143,11 @@ public class Main extends Application implements gridElements {
                             String.valueOf(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex())),
                             String.valueOf(webPage.getCurrenciesValues().get(comboBox_desiredCurreny.getSelectionModel().getSelectedIndex())),
                             String.valueOf(webPage.getCurrenciesValues().get(selectedCurrency_index))));
-                    if (comboBox_Currency.getItems().get(0) != "Select file first") {
+                    if (comboBox_Currency.getItems().get(0) != "Choose a file first") {
                         labelCalculate.setText(decimalFormat.format(Double.valueOf(value)) + " " + webPage.getCurrenciesSymbols().get(comboBox_desiredCurreny                                            .getSelectionModel().getSelectedIndex()));
                     }
                 } else {
-                    labelCalculate.setText("You need to choose file first!");
+                    labelCalculate.setText("You need to choose a file first!");
                 }
             }
         });
@@ -180,35 +183,70 @@ public class Main extends Application implements gridElements {
     }
 
     private void runScanner(File file) {
+        LinkedList<String> errors = new LinkedList<>();
         this.dates = new LinkedList<>();
         this.quantity = new LinkedList<>();
         this.currencies = new LinkedList<>();
         comboBox_Currency.getItems().clear();
+        boolean isErrorOccure = false;
         try {
             Scanner scanner = new Scanner(new File(file.getPath()));
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                Scanner lineScanner = new Scanner(line);
-                lineScanner.useDelimiter(";");
-                while (lineScanner.hasNext()) {
-                    String temp = lineScanner.next();
-                    if(checkIfItsDate(temp)) {
-                        dates.add(temp);
-                    } else if (checkIfItsValue(temp)) {
-                        quantity.add(temp);
-                    } else if (checkIfItsShortcut(temp)) {
-                        currencies.add(temp);
-                        comboBox_Currency.getItems().add(temp);
+            if (scanner.hasNextLine()) {
+                while (scanner.hasNextLine()) {
+                    String line = scanner.nextLine();
+                    Scanner lineScanner = new Scanner(line);
+                    lineScanner.useDelimiter(";");
+                    while (lineScanner.hasNext()) {
+                        String temp = lineScanner.next();
+                        if (checkIfItsDate(temp)) {
+                            dates.add(temp);
+                        } else if (checkIfItsValue(temp)) {
+                            quantity.add(temp);
+                        } else if (checkIfItsShortcut(temp)) {
+                            currencies.add(temp);
+                            comboBox_Currency.getItems().add(temp);
+                        } else {
+                            if (temp.charAt(0) != '/' && temp.charAt(1) != '/') {
+                                System.out.println(temp);
+                                errors.add(temp);
+                                isErrorOccure = true;
+                            } else {
+                                continue;
+                            }
+                        }
                     }
                 }
+                comboBox_Currency.setValue(comboBox_Currency.getItems().get(0));
+                labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
+                labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()) + " " +
+                        currencies.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Załadowano!");
+                alert.setHeaderText("Pomyślnie wcyztano dane z pliku");
+                alert.setContentText("Plik zostanie zapamiętany przy nastepnym uruchomieniu programu\n\nkliknij ok żeby przejść dalej.");
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Błąd wczytywania");
+                alert.setHeaderText("Sprawdź składnie danych w wybranym pliku");
+                alert.setContentText("Data: DD-MM-RRRR\tnp: 10.12.2019\nWaluta: XYZ\tnp: PLN\nIlość: xxx.yyy,zz\tnp: 111.222,33");
+                alert.showAndWait();
             }
+
         } catch (IOException | NumberFormatException ex) {
             ex.printStackTrace();
         } finally {
-            comboBox_Currency.setValue(comboBox_Currency.getItems().get(0));
-            labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
-            labelQuantity.setText(quantity.get(comboBox_Currency.getSelectionModel().getSelectedIndex()) + " " +
-                    currencies.get(comboBox_Currency.getSelectionModel().getSelectedIndex()));
+            if (isErrorOccure) {
+                String temp = "";
+                for (int i=0; i < errors.size(); i++) {
+                    temp += errors.get(i) + " ";
+                }
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Niektóre dane nie zostały wczytane.");
+                alert.setHeaderText("Sprawdź składnie tych danych:");
+                alert.setContentText(temp);
+                alert.showAndWait();
+            }
         }
     }
 
@@ -216,11 +254,9 @@ public class Main extends Application implements gridElements {
         double newQuantity = removeCommaSigns(oldQuantity);
         double newDesireCurrencyValue = removeCommaSigns(oldDesireCurrencyValue);
         double newCurrencyValue = removeCommaSigns(oldCurrencyValue);
-        System.out.println("New quantity: " + newQuantity);
-        System.out.println("New desireChoiceBoxValue: " + newDesireCurrencyValue);
-        System.out.println("New currencyValue: " + newCurrencyValue);
         double result = (newCurrencyValue/newDesireCurrencyValue)*newQuantity;
         return String.valueOf(result);
+
     }
 
     private double removeCommaSigns(String value) {

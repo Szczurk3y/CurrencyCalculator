@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Currency Calculator" />
+    </artifacts-to-build>
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/../Game_Menu/src/GameMenu/MenuStages/StageTwo.java" line="65" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Currency_Calculator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/example_file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/example_file2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Currency Calculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Currency Calculator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Currency Calculator/sample/elements/gridElements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Currency Calculator/sample/elements/gridElements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/wejściowy plik z kwotami walut.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/wejściowy plik z kwotami walut.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/elements/gridElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/elements/gridElements.java" afterDir="false" />
     </list>
@@ -70,20 +80,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
+            <state relative-caret-position="470">
+              <caret line="211" column="53" lean-forward="true" selection-start-line="211" selection-start-column="53" selection-end-line="211" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#2818:3193" />
-                <element signature="class#3237:3690" />
-                <element signature="e#4707#5293#0" expanded="true" />
-                <element signature="e#5292#5293#0" expanded="true" />
-                <element signature="class#3970:5543" />
-                <element signature="method#setGridConstraints#0;class#Main#0" />
-                <element signature="method#runScanner#0;class#Main#0" />
-                <element signature="method#calculate#0;class#Main#0" />
-                <element signature="method#removeCommaSigns#0;class#Main#0" />
-                <element signature="method#checkIfItsDate#0;class#Main#0" />
+                <element signature="e#1494#1495#0" expanded="true" />
+                <element signature="e#1522#1523#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/collections/ObservableListWrapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-158">
+              <caret line="105" column="53" lean-forward="true" selection-start-line="105" selection-start-column="53" selection-end-line="105" selection-end-column="53" />
+              <folding>
+                <element signature="e#2182#2183#0" expanded="true" />
+                <element signature="e#2227#2228#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/elements/gridElements.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+            <state relative-caret-position="342">
+              <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/src/sample/HTMLWebPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,6 +142,8 @@
     <findStrings>
       <find>currencies</find>
       <find>labelDe</find>
+      <find>com</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -145,8 +162,8 @@
         <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/sample/HTMLData.java" />
         <option value="$PROJECT_DIR$/src/sample/elements/SortedComboBoxModel.java" />
-        <option value="$PROJECT_DIR$/src/sample/HTMLWebPage.java" />
         <option value="$PROJECT_DIR$/src/sample/elements/gridElements.java" />
+        <option value="$PROJECT_DIR$/src/sample/HTMLWebPage.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
       </list>
     </option>
@@ -160,11 +177,12 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -173,12 +191,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Currency Calculator" type="b2602c69:ProjectViewProjectNode" />
               <item name="Currency Calculator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Currency Calculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Currency Calculator" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Currency Calculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Currency Calculator" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Currency Calculator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Currency Calculator" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="Currency_Calculator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Currency Calculator" type="b2602c69:ProjectViewProjectNode" />
@@ -208,7 +245,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,9 +258,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572537881312" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Game_Menu" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JARs/jsoup-1.12.1.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15191856" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -339,7 +375,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23457447" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23882979" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -348,7 +384,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20811099" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3062967" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.18356457" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -360,17 +396,17 @@
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32870865" />
-      <window_info anchor="bottom" id="Terminal" order="14" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32977587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32978722" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.32978722" />
     </layout>
     <layout-to-restore>
       <window_info id="Designer" order="0" />
@@ -498,42 +534,45 @@
     <entry file="file://$PROJECT_DIR$/src/sample/HTMLData.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/elements/SortedComboBoxModel.java" />
     <entry file="jar://$USER_HOME$/Desktop/Programming/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/tk/quantum/GlassViewEventHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/HTMLWebPage.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/elements/gridElements.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        <state relative-caret-position="342">
+          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/elements/gridElements.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/HTMLWebPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        <state relative-caret-position="361">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../jdk1.8.0_181/javafx-src.zip!/com/sun/javafx/collections/ObservableListWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="105" column="53" lean-forward="true" selection-start-line="105" selection-start-column="53" selection-end-line="105" selection-end-column="53" />
+          <folding>
+            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#2227#2228#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
+        <state relative-caret-position="470">
+          <caret line="211" column="53" lean-forward="true" selection-start-line="211" selection-start-column="53" selection-end-line="211" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#2818:3193" />
-            <element signature="class#3237:3690" />
-            <element signature="e#4707#5293#0" expanded="true" />
-            <element signature="e#5292#5293#0" expanded="true" />
-            <element signature="class#3970:5543" />
-            <element signature="method#setGridConstraints#0;class#Main#0" />
-            <element signature="method#runScanner#0;class#Main#0" />
-            <element signature="method#calculate#0;class#Main#0" />
-            <element signature="method#removeCommaSigns#0;class#Main#0" />
-            <element signature="method#checkIfItsDate#0;class#Main#0" />
+            <element signature="e#1494#1495#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -544,10 +583,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Currency Calculator</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

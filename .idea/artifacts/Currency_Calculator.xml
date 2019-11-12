@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Currency Calculator">
+    <output-path>$PROJECT_DIR$/out/artifacts/Currency_Calculator</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Currency_Calculator.jar">
+        <element id="module-output" name="Currency Calculator" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/JARs/jsoup-1.12.1.jar" path-in-jar="/" />
+      </element>
+    </root>
+  </artifact>
+</component>
